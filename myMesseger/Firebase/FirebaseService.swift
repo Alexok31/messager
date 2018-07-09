@@ -12,8 +12,9 @@ import FirebaseDatabase
 import FirebaseStorage
 
 
-class FirebaseService {
+class FirebaseService: MessageReceivable {
     
+    var didReceiveNewMessage: ((MessageStructure) -> ())?
     var getData = GetData()
     
     func chatPartnerId(for message: MessageStructure) -> String? {
